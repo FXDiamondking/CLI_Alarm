@@ -1,0 +1,38 @@
+# Quick command cheat-sheet for manual testing
+# Copy-paste these blocks directly into the running app.
+
+# --- Basic happy path ---
+add 07:30 "Wake up"
+add 13:00 Lunch
+add 18:00 "Evening walk"
+list
+update 1 07:45 "Wake up (updated)"
+delete 2
+list
+exit
+
+# --- 12-hour format ---
+add 07:30 AM "Morning"
+add 02:30 PM "Afternoon"
+add 11:59 PM "Night"
+list
+exit
+
+# --- Error cases ---
+add
+add 25:00
+add abc
+update 99 08:00
+delete 99
+delete abc
+update xyz 08:00
+list
+exit
+
+# --- Near-future alarm (fire test) ---
+# Replace HH:MM with 1-2 minutes from now, then wait.
+add HH:MM "Fire test alarm"
+list
+# ... wait for notification ...
+list
+exit
